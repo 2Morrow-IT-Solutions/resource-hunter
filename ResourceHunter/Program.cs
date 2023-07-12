@@ -24,7 +24,7 @@ namespace ResourceHunter
 
             if (!Directory.Exists(@"Input"))
             {
-                Directory.CreateDirectory("@Input");
+                Directory.CreateDirectory("Input");
             }
 
             if (!File.Exists(@"Input\Languages.xlsx"))
