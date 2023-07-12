@@ -16,6 +16,7 @@ namespace ResourceHunter
 
         static void Main(string[] args)
         {
+            Console.Clear();
             ConvertFiles convertFiles = new ConvertFiles();
             FolderHelper folderHelper = new FolderHelper();
             ExportFiles exportfiles = new ExportFiles(convertFiles, folderHelper);
