@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceHunter", "ResourceHunter\ResourceHunter.csproj", "{4793B4A9-D01F-471F-8343-B4D912811DE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceHunterTest", "ResourceHunterTest\ResourceHunterTest.csproj", "{1AD31832-4750-4F8E-8E38-BE3D4EDE054C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4793B4A9-D01F-471F-8343-B4D912811DE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4793B4A9-D01F-471F-8343-B4D912811DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4793B4A9-D01F-471F-8343-B4D912811DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4793B4A9-D01F-471F-8343-B4D912811DE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AD31832-4750-4F8E-8E38-BE3D4EDE054C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AD31832-4750-4F8E-8E38-BE3D4EDE054C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AD31832-4750-4F8E-8E38-BE3D4EDE054C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AD31832-4750-4F8E-8E38-BE3D4EDE054C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A1BA31E-D561-46E6-B36F-F94E872747C9}
+	EndGlobalSection
+EndGlobal
