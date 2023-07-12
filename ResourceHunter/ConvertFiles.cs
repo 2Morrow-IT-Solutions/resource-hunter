@@ -8,8 +8,8 @@ namespace ResourceHunter
 {
     public class ConvertFiles : IConvertFiles
     {
-        private static DirectoryInfo mainDirectory = new DirectoryInfo(@"Input");
-        private static string fileName = mainDirectory.GetFiles().First().FullName;
+
+        private static string fileName = @"Input/Languages.xlsx";
         private static readonly IImportFiles importFiles = new ImportFiles(fileName);
 
         private static void CreateFile(String path)

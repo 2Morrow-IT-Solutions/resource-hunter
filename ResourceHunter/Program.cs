@@ -12,9 +12,7 @@ namespace ResourceHunter
         private const int ANDROID_IOS = 2;
         private const int CLOSE = -1;
         private static int platform;
-        private static DirectoryInfo mainDirectory = new DirectoryInfo(@"Input");
-        private static string fileName = mainDirectory.GetFiles().First().FullName;
-        private static readonly IImportFiles importFiles = new ImportFiles(fileName);
+        private static readonly IImportFiles importFiles = new ImportFiles(@"Input/Languages.xlsx");
 
         static void Main(string[] args)
         {
@@ -27,9 +25,9 @@ namespace ResourceHunter
                 Directory.CreateDirectory("Input");
             }
 
-            if (!File.Exists(fileName))
+            if (!File.Exists(@"Input/Languages.xlsx"))
             {
-                Console.WriteLine("\n FILE NOT FOUND. PLEASE MAKE SURE THAT THE INSERTED FILE IS NAMED \"Languages.xlsx\"  ");
+                Console.WriteLine(@"FILE NOT FOUND. PLEASE MAKE SURE THAT THE INSERTED FILE IS NAMED 'Languages.xlsx'.");
                 Console.ReadKey();
             }
             else
