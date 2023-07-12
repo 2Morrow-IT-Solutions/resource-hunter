@@ -34,10 +34,16 @@ namespace ResourceHunter
             for (int i = 1; i < datas.Item1.Count; i++)
             {
                 string writeItem = datas.Item2[i];
-                if (datas.Item2[i].EndsWith(" ")) { writeItem = datas.Item2[i].Replace(datas.Item2[i], datas.Item2[i].TrimEnd() + @"\u0020"); }
+
+                if (datas.Item2[i]==null) { writeItem = "Empty"; }
+                if (!(datas.Item2[i] == null))
+                {
+                    if (datas.Item2[i].EndsWith(" ")) { writeItem = datas.Item2[i].Replace(datas.Item2[i], datas.Item2[i].TrimEnd() + @"\u0020"); }
+                }
+                
                 w.WriteLine($"    <string name=\"{datas.Item1[i]}\">{writeItem}</string>");
             }
-
+            
             w.WriteLine("</resources>");
             w.Flush();
             w.Close();
