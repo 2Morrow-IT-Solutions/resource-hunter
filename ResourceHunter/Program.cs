@@ -47,6 +47,7 @@ namespace ResourceHunter
                     Console.WriteLine("\n" + "\n" + "To proceed with the conversion please type:");
                     Console.WriteLine("0 for Android");
                     Console.WriteLine("1 for iOS");
+                    Console.WriteLine("2 for both");
                     Console.WriteLine("-1 to terminate the program");
                     Console.WriteLine("Then hit ENTER.");
 
@@ -83,6 +84,7 @@ namespace ResourceHunter
             catch (Exception ex)
             {
                 Console.WriteLine("\n FILE NOT FOUND. PLEASE MAKE SURE THAT THE INSERTED FILE IS NAMED \"Languages.xlsx\"  ");
+                Console.ReadKey();
             }
         }
     }
