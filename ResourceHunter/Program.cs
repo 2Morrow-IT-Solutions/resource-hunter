@@ -22,7 +22,7 @@ namespace ResourceHunter
             FolderHelper folderHelper = new FolderHelper();
             ExportFiles exportfiles = new ExportFiles(convertFiles, folderHelper);
 
-            if (Directory.Exists(@"Input"))
+            if (!Directory.Exists(@"Input"))
             {
                 Directory.CreateDirectory("@Input");
             }
