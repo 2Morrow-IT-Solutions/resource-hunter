@@ -1,8 +1,4 @@
-﻿
-using OfficeOpenXml;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Math;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.RefAndLookup;
-using ResourceHunter.Contracts;
+﻿using ResourceHunter.Contracts;
 using System;
 using System.IO;
 using System.Linq;
@@ -26,7 +22,17 @@ namespace ResourceHunter
             FolderHelper folderHelper = new FolderHelper();
             ExportFiles exportfiles = new ExportFiles(convertFiles, folderHelper);
 
-            try
+            if (Directory.Exists(@"Input"))
+            {
+                Directory.CreateDirectory("@Input");
+            }
+
+            if (!File.Exists(@"Input\Languages.xlsx"))
+            {
+                Console.WriteLine("\n FILE NOT FOUND. PLEASE MAKE SURE THAT THE INSERTED FILE IS NAMED \"Languages.xlsx\"  ");
+                Console.ReadKey();
+            }
+            else
             {
                 Console.Write("Languages found:");
                 string languages = null;
@@ -44,12 +50,7 @@ namespace ResourceHunter
                         platform = CLOSE; break;
                     }
 
-                    Console.WriteLine("\n" + "\n" + "To proceed with the conversion please type:");
-                    Console.WriteLine("0 for Android");
-                    Console.WriteLine("1 for iOS");
-                    Console.WriteLine("2 for both");
-                    Console.WriteLine("-1 to terminate the program");
-                    Console.WriteLine("Then hit ENTER.");
+                    WriteMenu();
 
                     try { platform = int.Parse(Console.ReadLine()); } catch { }
 
@@ -81,11 +82,16 @@ namespace ResourceHunter
                     if (platform == CLOSE) { break; }
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("\n FILE NOT FOUND. PLEASE MAKE SURE THAT THE INSERTED FILE IS NAMED \"Languages.xlsx\"  ");
-                Console.ReadKey();
-            }
+        }
+
+        private static void WriteMenu()
+        {
+            Console.WriteLine("\n" + "\n" + "To proceed with the conversion please type:");
+            Console.WriteLine("0 for Android");
+            Console.WriteLine("1 for iOS");
+            Console.WriteLine("2 for both");
+            Console.WriteLine("-1 to terminate the program");
+            Console.WriteLine("Then hit ENTER.");
         }
     }
 }
