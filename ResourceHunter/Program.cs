@@ -27,7 +27,7 @@ namespace ResourceHunter
                 Directory.CreateDirectory("Input");
             }
 
-            if (!File.Exists(@"Input\Languages.xlsx"))
+            if (!File.Exists(fileName))
             {
                 Console.WriteLine("\n FILE NOT FOUND. PLEASE MAKE SURE THAT THE INSERTED FILE IS NAMED \"Languages.xlsx\"  ");
                 Console.ReadKey();
