@@ -41,7 +41,7 @@ The Excel file must include :
 
 ## Usage
 
-1. Download the latest release from [Github](https://2morrowit.com/)
+1. Download the latest release from [Github](https://github.com/2Morrow-IT-Solutions/resource-hunter/releases)
 2. Add the excel file to the following folder Path: \ResourceHunter\bin\Release\net7.0\Input
 3. Run the app and choose one converting option (*xml for Android, .strings for IOS, or both)
 4. After the process is done, you can find the converted files, for each languages, in the Output folder.
