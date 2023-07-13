@@ -36,11 +36,14 @@ namespace ResourceHunter
 
                     for (int i = 1; i <= rowCountExcel; i++)
                     {
-                        if (!(worksheet.Cells[i, 1].Value?.ToString() == ""))
+                    if (worksheet.Cells[i, 1].Value != null)
+                    {
+                        if (!(worksheet.Cells[i, 1].Value!.ToString() == ""))
                         {
                             rowCount++;
                         }
                     }
+                }
 
                     Dictionary<int, List<string>> dictLanguage = new Dictionary<int, List<string>>();
                     for (int i = 1; i <= langCount; i++)
