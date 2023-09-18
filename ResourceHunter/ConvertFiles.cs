@@ -1,4 +1,5 @@
-﻿using ResourceHunter.Contracts;
+﻿using OfficeOpenXml.Drawing.Chart;
+using ResourceHunter.Contracts;
 using System;
 using System.IO;
 using System.Linq;
@@ -39,11 +40,12 @@ namespace ResourceHunter
                 if (!(datas.Item2[i] == null))
                 {
                     if (datas.Item2[i].EndsWith(" ")) { writeItem = datas.Item2[i].Replace(datas.Item2[i], datas.Item2[i].TrimEnd() + @"\u0020"); }
+                    if (datas.Item2[i].Contains("[string]")) { writeItem = datas.Item2[i].Replace("[string]", "%1$s"); }
+                    if (datas.Item2[i].Contains("[int]")) { writeItem = datas.Item2[i].Replace("[int]", "%2$d"); }
                 }
                 
                 w.WriteLine($"    <string name=\"{datas.Item1[i]}\">{writeItem}</string>");
             }
-            
             w.WriteLine("</resources>");
             w.Flush();
             w.Close();
@@ -58,6 +60,12 @@ namespace ResourceHunter
 
             for (int i = 1; i < datas.Item1.Count; i++)
             {
+                if (!(datas.Item2[i] == null))
+                {
+                    if (datas.Item2[i].Contains("[string]")) { datas.Item2[i] = datas.Item2[i].Replace("[string]", "%@"); }
+                    if (datas.Item2[i].Contains("[int]")) { datas.Item2[i] = datas.Item2[i].Replace("[int]", "%d"); }
+                }
+
                 w.WriteLine($" \"{datas.Item1[i]}\" = \"{datas.Item2[i]}\"; ");
             }
             w.Flush();
