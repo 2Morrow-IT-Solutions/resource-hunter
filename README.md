@@ -13,6 +13,14 @@ This application is designed to help mobile developers regarding the needs for p
   
   From this point the user can select the desired conversion option. After the process is done, you have to go after the Output folder and check the results. The output files will be organised into two separatley folders, Android for `.xml` files, and IOS for `.strings` files. Further, each folder will contain a sub-folder for every language generated from the excel document, inside of it being found the expected file.
 
+## String formatting
+
+At the momment, the app uses the tags `[string]` and `[int]` , and converts them to their corresponding OS codes: 
+| code | Android | iOS |
+|--- | --- | --- |
+| [string] | %1$s | %@ |
+| [int] | %2$d | %d  |
+
 ## Installation
 
 Firstly, you will need to setup your excel file, following the next steps.
